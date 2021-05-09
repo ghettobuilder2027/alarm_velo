@@ -11,7 +11,7 @@ just extract the ic2dev and mpu6050 libraries from the arduino repertory
 * GND to battery negative
 * +5V to switch 
 * switch to battery positive
-* D5 to out of the schematics
+* D5 to out of the speaker schematics below
 
 ### for the MPU6050
 * D1 to SCL
