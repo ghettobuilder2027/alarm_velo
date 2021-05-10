@@ -25,7 +25,7 @@ int buzzPin=14; // D5 on the wemos mini
 
 int start = 0;
 int total = 0;
-bool sound = false ;// Set to true to really make noise (debug without noise is better...)
+bool sound = true ;// Set to true to really make noise (debug without noise is better...)
 bool tentativeVol= false;
 int deplacement = 0;
 unsigned long myTime;
@@ -75,7 +75,7 @@ void loop() {
       if (start%2 != 0) {   
         total++;
         alarm();
-        if (start > 10) start = 0;  
+        if (start > 10) start = start % 2;  
       }
       start++;
   }
@@ -122,7 +122,7 @@ void beep () {
   Serial.print("Beeeep  start = ");
   Serial.println(start);
   if (sound) {
-   for (j = 0; j < 12; j++){
+   for (j = 0; j < 9; j++){
     note (2000,15);
     note (4000,15);
     note (6000,15);
